@@ -17,13 +17,23 @@ function MediaList({ isLoading, items }) {
     <h1>Loading</h1>
   ) : playButtonToggle ? (
     // PLAY HIGHLIGHT
-    <Container>
+    <Container className="d-flex justify-content-center">
       <Row>
-        <Col lg={6} md={6} sm={10} xs={12}>
-          <ReactPlayer controls url={highlightVideo}></ReactPlayer>
-          <Button variant="secondary" type="button" onClick={() => isPlayButtonToggle(false)}>
-            Go Back
-          </Button>
+        <Col lg={12} md={12} sm={12} xs={12}>
+          <Card>
+            <Card.Body>
+              <ReactPlayer controls url={highlightVideo}></ReactPlayer>
+              <Button
+                variant="secondary"
+                size="lg"
+                type="button"
+                className="w-100 py-2"
+                onClick={() => isPlayButtonToggle(false)}
+              >
+                Go Back
+              </Button>
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
     </Container>
@@ -33,12 +43,17 @@ function MediaList({ isLoading, items }) {
       <Row>
         {items.map((item) => (
           <Col lg={4} md={6} sm={10} xs={12} key={item.id}>
-            <Card>
+            <Card className="p-2 text-center">
               <Card.Img variant="top" src={item.thumbnail_url} />
               <Card.Body>
-                <Card.Title>{item.title.en}</Card.Title>
-                <Card.Text>Something</Card.Text>
-                <Button variant="secondary" id={item.url} type="button" onClick={handleClick}>
+                <Card.Title style={{ height: "48px" }}>{item.title.en}</Card.Title>
+                <Button
+                  className="w-100"
+                  variant="secondary"
+                  id={item.url}
+                  type="button"
+                  onClick={handleClick}
+                >
                   Watch Highlights
                 </Button>
               </Card.Body>
