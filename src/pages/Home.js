@@ -10,3 +10,6 @@ function Home() {
   return (
     < MediaGrid />
   )
+}
+
+export default Home;
