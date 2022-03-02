@@ -1,6 +1,12 @@
-import React from "react";
+
+import React, { useState } from 'react';
+
 import MediaGrid from "../components/MediaGrid";
 
-export default function Home() {
-  return <MediaGrid />;
-}
+//login/signup form
+
+
+function Home() {
+  return (
+    < MediaGrid />
+  )
