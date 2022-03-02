@@ -1,9 +1,0 @@
-.homePage {
-    display: flex;
-    justify-content: space-around;
-    margin: 5% 5% 0% 1%;
-}
-
-.homePage Form {
-    background-color: pink;
-}
