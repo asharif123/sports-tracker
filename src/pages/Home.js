@@ -1,15 +1,16 @@
-
-import React, { useState } from 'react';
-
+import React from "react";
 import MediaGrid from "../components/MediaGrid";
-
-//login/signup form
-
+import NewsBar from "../components/NewsBar";
+import Events from "../components/Events";
 
 function Home() {
   return (
-    < MediaGrid />
-  )
+    <div>
+      {/* <NewsBar />; */}
+      {/* <MediaGrid />; */}
+      <Events />
+    </div>
+  );
 }
 
 export default Home;
