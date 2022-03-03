@@ -1,4 +1,5 @@
 import Form from "react-bootstrap/Form";
+import React, { useState } from 'react';
 import { Button } from "react-bootstrap";
 import "../pages/styles/Login.css";
 // import { checkPassword, validateEmail } from '../utils/helpers';
@@ -46,39 +47,37 @@ function Login() {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
 
-    if (!validateEmail(emailSignup) || !userNameSignup) {
-      setErrorMessage("Email or username is invalid");
-      // We want to exit out of this code block if something is wrong so that the user can correct it
-      return;
-      // Then we check to see if the password is not valid. If so, we set an error message regarding the password.
-    }
-    if (!checkPassword(passwordSignup)) {
-      setErrorMessage(`Choose a more secure password for the account: ${userNameSignup}`);
-      return;
-    }
+    // if (!validateEmail(emailSignup) || !userNameSignup) {
+    //   setErrorMessage("Email or username is invalid");
+    //   // We want to exit out of this code block if something is wrong so that the user can correct it
+    //   return;
+    //   // Then we check to see if the password is not valid. If so, we set an error message regarding the password.
+    // }
+    // if (!checkPassword(passwordSignup)) {
+    //   setErrorMessage(`Choose a more secure password for the account: ${userNameSignup}`);
+    //   return;
+    // }
 
     // If everything goes according to plan, we want to clear out the input after a successful registration.
     setUserNameSignup("");
     setEmailSignup("");
     setPasswordSignup("");
-    <MediaList />;
   };
 
   const handleFormLogin = (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
 
-    if (!validateEmail(emailLogin) || !userNameLogin) {
-      setErrorMessage("Email or username is invalid");
-      // We want to exit out of this code block if something is wrong so that the user can correct it
-      return;
-    }
+    // if (!validateEmail(emailLogin) || !userNameLogin) {
+    //   setErrorMessage("Email or username is invalid");
+    //   // We want to exit out of this code block if something is wrong so that the user can correct it
+    //   return;
+    // }
 
     // If everything goes according to plan, we want to clear out the input after a successful registration.
     setUserNameLogin("");
     setEmailLogin("");
     setPasswordLogin("");
-    <MediaList />;
   };
 
   return (
