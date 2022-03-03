@@ -1,12 +1,15 @@
-import './App.css';
+// import './App.css';
+import Navbar from '../../sports-tracker/src/components/navbar/Navbar';
+import Menu from '../src/components/menu/Menu'
+import { useState } from 'react';
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false)
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>RAT!</h1>
-      </header>
-    </div>
+    <>
+    <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+    <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+    </>
   );
 }
 
