@@ -1,28 +1,47 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User } = require('../../models/User');
+
+//Get all users
+router.get('/', async (req, res) =>{
+  try
+  {
+      const allUserData = await User.findAll();
+      res.status(200).json(allUserData);
+
+  }catch(err)
+  {
+      console.log(err);
+      res.status(500).send(err);
+  }
+});
 
 
 // CREATE new user.
-router.post('/signup', async (req, res) => {
+router.post('/signup', async (req, res, next) => {
 
     try 
     {
       const dbUserData = await User.create(req.body);
-        
-      req.session.save(() => {
+        next();
+        console.log(dbUserData)
+        req.session.save(() => {
         req.session.loggedIn = true;
         res.status(200).json(dbUserData);
+
       });
   
     } catch (err) 
     {
       console.log( "ERROR", err);
+      window.alert(err)
       res.status(500).json(err);
+      next();
+
     }
   });
 
   // Login
-router.post('/login', async (req, res) => {
+router.post('/login', async (req, res, next) => {
     try 
     {
       const dbUserData = await User.findOne({
@@ -56,6 +75,7 @@ router.post('/login', async (req, res) => {
     {
       console.log(err);
       res.status(500).json(err);
+      next();
     }
   });
   
@@ -68,14 +88,14 @@ router.post('/login', async (req, res) => {
     }
   })
 
-// router.post('/logout', (req, res) => {
-//   if (req.session.logged_in) {
-//     req.session.destroy(() => {
-//       res.status(204).end();
-//     });
-//   } else {
-//     res.status(404).end();
-//   }
-// });
+  router.post('/logout', (req, res) => {
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
+    }
+  });
 
 module.exports = router;

@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import { Button } from "react-bootstrap";
 import "../pages/styles/Login.css";
 import { checkLoginPassword, validateLoginEmail } from '../utils/helpers';
+
+const apiEndpoint = process.env.NODE_ENV === "production" ? "https://someappname.herokuapp.com" : "http://localhost:3001"
+
 function Login() {
   const [emailSignup, setEmailSignup] = useState("");
   const [userNameSignup, setUserNameSignup] = useState("");
@@ -55,22 +58,15 @@ function Login() {
     }
 
     if (userNameSignup && emailSignup && passwordSignup) {
-        const response = await fetch('/signup', {
+        const response = await fetch(apiEndpoint + '/signup', {
             method: 'POST',
             body: JSON.stringify({userNameSignup, emailSignup, passwordSignup}),
             headers: { 'Content-Type': 'application/json' },
         });  
-        setTimeout(() => {
-            console.log(response)
-            if (response.ok) {
-                alert('SUCCESS!');
-            } 
-          
-            else {
-              alert('Failed to Sign up.');
-            }
-          }, 1000);
-    
+        if (response.ok) {
+          console.log("SUCCESS!")
+        }
+      
     }
 
     // If everything goes according to plan, we want to clear out the input after a successful registration.
@@ -84,21 +80,11 @@ function Login() {
     e.preventDefault();
 
     if (emailLogin && passwordLogin) {
-        const response = await fetch('/login', {
+        const response = await fetch(apiEndpoint + '/login', {
             method: 'POST',
             body: JSON.stringify({emailLogin, passwordLogin}),
             headers: { 'Content-Type': 'application/json' },
         });
-        setTimeout(() => {
-            console.log(response)
-            if (response.ok) {
-                alert('SUCCESS!');
-            } 
-          
-            else {
-              alert('Failed to log in.');
-            }
-          }, 1000);
     }
 
     //use sessions to determine if user already exists or if incorrect password

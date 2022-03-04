@@ -1,9 +1,10 @@
 const express = require("express");
 const path = require("path");
+const cors = require("cors")
 
 const app = express();
-
-const routes = require("./controllers");
+app.use(cors);
+const routes = require("./controllers/api");
 const sequelize = require("./config/connection");
 const PORT = process.env.PORT || 3001;
 
