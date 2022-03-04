@@ -9,7 +9,6 @@ function Login() {
   const [passwordSignup, setPasswordSignup] = useState("");
 
   const [emailLogin, setEmailLogin] = useState("");
-  const [userNameLogin, setUserNameLogin] = useState("");
   const [passwordLogin, setPasswordLogin] = useState("");
 
   const [errorMessage, setErrorMessage] = useState("");
@@ -35,14 +34,12 @@ function Login() {
 
     if (inputType === "emailLogin") {
       setEmailLogin(inputValue);
-    } else if (inputType === "userNameLogin") {
-      setUserNameLogin(inputValue);
     } else {
       setPasswordLogin(inputValue);
     }
   };
 
-  const handleFormSignup = (e) => {
+  const handleFormSignup = async (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
 
@@ -57,18 +54,54 @@ function Login() {
       return;
     }
 
+    if (userNameSignup && emailSignup && passwordSignup) {
+        const response = await fetch('/signup', {
+            method: 'POST',
+            body: JSON.stringify({userNameSignup, emailSignup, passwordSignup}),
+            headers: { 'Content-Type': 'application/json' },
+        });  
+        setTimeout(() => {
+            console.log(response)
+            if (response.ok) {
+                alert('SUCCESS!');
+            } 
+          
+            else {
+              alert('Failed to Sign up.');
+            }
+          }, 1000);
+    
+    }
+
     // If everything goes according to plan, we want to clear out the input after a successful registration.
     setUserNameSignup("");
     setEmailSignup("");
     setPasswordSignup("");
   };
 
-  const handleFormLogin = (e) => {
+  const handleFormLogin = async (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
 
+    if (emailLogin && passwordLogin) {
+        const response = await fetch('/login', {
+            method: 'POST',
+            body: JSON.stringify({emailLogin, passwordLogin}),
+            headers: { 'Content-Type': 'application/json' },
+        });
+        setTimeout(() => {
+            console.log(response)
+            if (response.ok) {
+                alert('SUCCESS!');
+            } 
+          
+            else {
+              alert('Failed to log in.');
+            }
+          }, 1000);
+    }
+
     //use sessions to determine if user already exists or if incorrect password
-    setUserNameLogin("");
     setEmailLogin("");
     setPasswordLogin("");
   };
