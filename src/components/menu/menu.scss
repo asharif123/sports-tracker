@@ -3,7 +3,6 @@
     height:100vh;
     background-color: #E5E5E5;
     position: fixed;
-    top:0;
     right:-300px;
     z-index: 2;
     display: flex;
@@ -12,32 +11,32 @@
     justify-content: center;
     transition: all 1s ease;
 
-    &.active{
-        right:0;
-    }
-    
-    ul{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        font-size: 30px;
-        font-weight: 300;
-        color:black;
-        width:60%;
+&.active{
+    right:0;
+}
 
-        li{
-            margin-bottom: 25px;
-            a{
-                font-size: inherit;
-                color: inherit;
-                text-decoration: none;
-            }
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 30px;
+    font-weight: 300;
+    color:black;
+    width:60%;
 
-            &:hover{
-                font-weight: 500;
-            }
+    li{
+        margin-bottom: 25px;
+        a{
+            font-size: inherit;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        &:hover{
+            font-weight: 500;
         }
     }
+}
 
 
 }

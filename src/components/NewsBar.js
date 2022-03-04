@@ -22,7 +22,6 @@ function NewsBar() {
 
   return (
     <div>
-      <NewsList items={items} />
     </div>
   );
 }

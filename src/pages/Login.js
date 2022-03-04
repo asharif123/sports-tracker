@@ -2,8 +2,7 @@ import Form from "react-bootstrap/Form";
 import React, { useState } from 'react';
 import { Button } from "react-bootstrap";
 import "../pages/styles/Login.css";
-// import { checkPassword, validateEmail } from '../utils/helpers';
-
+import { checkLoginPassword, validateLoginEmail } from '../utils/helpers';
 function Login() {
   const [emailSignup, setEmailSignup] = useState("");
   const [userNameSignup, setUserNameSignup] = useState("");
@@ -47,16 +46,16 @@ function Login() {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
 
-    // if (!validateEmail(emailSignup) || !userNameSignup) {
-    //   setErrorMessage("Email or username is invalid");
-    //   // We want to exit out of this code block if something is wrong so that the user can correct it
-    //   return;
-    //   // Then we check to see if the password is not valid. If so, we set an error message regarding the password.
-    // }
-    // if (!checkPassword(passwordSignup)) {
-    //   setErrorMessage(`Choose a more secure password for the account: ${userNameSignup}`);
-    //   return;
-    // }
+    if (!validateLoginEmail(emailSignup) || !userNameSignup) {
+      setErrorMessage("Email or username is invalid");
+      // We want to exit out of this code block if something is wrong so that the user can correct it
+      return;
+      // Then we check to see if the password is not valid. If so, we set an error message regarding the password.
+    }
+    if (!checkLoginPassword(passwordSignup)) {
+      setErrorMessage(`Choose a more secure password for the account: ${userNameSignup}`);
+      return;
+    }
 
     // If everything goes according to plan, we want to clear out the input after a successful registration.
     setUserNameSignup("");
@@ -68,13 +67,7 @@ function Login() {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
 
-    // if (!validateEmail(emailLogin) || !userNameLogin) {
-    //   setErrorMessage("Email or username is invalid");
-    //   // We want to exit out of this code block if something is wrong so that the user can correct it
-    //   return;
-    // }
-
-    // If everything goes according to plan, we want to clear out the input after a successful registration.
+    //use sessions to determine if user already exists or if incorrect password
     setUserNameLogin("");
     setEmailLogin("");
     setPasswordLogin("");
@@ -115,7 +108,7 @@ function Login() {
             placeholder="Create password"
           />
         </Form.Group>
-        <Button variant="primary" type="submit" onClick={handleFormSignup}>
+        <Button variant="secondary" type="submit" onClick={handleFormSignup}>
           Signup
         </Button>
       </Form>
@@ -141,7 +134,7 @@ function Login() {
             placeholder="Enter password"
           />
         </Form.Group>
-        <Button variant="primary" type="submit" onClick={handleFormLogin}>
+        <Button variant="secondary" type="submit" onClick={handleFormLogin}>
           Login
         </Button>
       </Form>
