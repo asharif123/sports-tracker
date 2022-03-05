@@ -1,0 +1,43 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+.carGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  margin: 30px;
+}
+
+.carCard {
+max-width: 375px;
+min-height: 390px;
+max-height: 390px;
+border-radius: 10px;
+display: grid;
+grid-template-columns: 1fr;
+margin: 10px;
+padding: 10px;
+justify-content: center;
+box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.cardContent {
+  place-content:center;
+  text-align: center;
+}
+.cardContent img {
+  /* margin-top: 10px; */
+  height: 200px;
+  width: 355px;
+}
+
+.cardContent p {
+  font-size: .75rem
+}
+
+.cardButt {
+
+}
