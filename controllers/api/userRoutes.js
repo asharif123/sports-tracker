@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models/User');
-
+const User = require('../../models/User');
 //Get all users
 router.get('/', async (req, res) =>{
   try
@@ -17,28 +16,31 @@ router.get('/', async (req, res) =>{
 
 
 // CREATE new user.
+// CREATE new user
+//userNameSignup, emailSignup, passwordSignup
 router.post('/signup', async (req, res, next) => {
+  try {
+    console.log(User)
+    const dbUserData = await User.create({
+      name: req.body.userNameSignup,
+      email: req.body.emailSignup,
+      password: req.body.passwordSignup,
+    });
+    console.log(dbUserData)
 
-    try 
-    {
-      const dbUserData = await User.create(req.body);
-        next();
-        console.log(dbUserData)
-        req.session.save(() => {
-        req.session.loggedIn = true;
-        res.status(200).json(dbUserData);
+    // Set up sessions with a 'loggedIn' variable set to `true`
+    req.session.save(() => {
+      req.session.loggedIn = true;
 
-      });
-  
-    } catch (err) 
-    {
-      console.log( "ERROR", err);
-      window.alert(err)
-      res.status(500).json(err);
-      next();
+      res.status(200).json(dbUserData);
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
-    }
-  });
+
 
   // Login
 router.post('/login', async (req, res, next) => {
@@ -54,7 +56,7 @@ router.post('/login', async (req, res, next) => {
       {
         res
           .status(400)
-          .json({ message: 'Incorrect email or password. Please try again!' });
+          .json({ message: 'Username does not exist!' });
         return;
       }
   
@@ -68,14 +70,12 @@ router.post('/login', async (req, res, next) => {
   
       await req.session.save(() => {
         req.session.loggedIn = true;
-        res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
-      });
-  
+        res.status(200).send('LOGGED IN!');      });
+        next();
     }catch (err)
     {
       console.log(err);
       res.status(500).json(err);
-      next();
     }
   });
   
