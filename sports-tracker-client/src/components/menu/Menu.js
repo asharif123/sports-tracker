@@ -22,7 +22,7 @@ export default function Menu({ menuOpen, setMenuOpen }) {
                 <NavLink to="/login">Login</NavLink>
             </li>
             <li onClick={() =>setMenuOpen(false)}>
-                <NavLink to="/signup">Signup</NavLink>
+                <NavLink to="/login">Signup</NavLink>
             </li>
         </ul>
     </div>
