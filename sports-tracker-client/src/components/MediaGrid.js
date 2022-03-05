@@ -24,7 +24,6 @@ function MediaGrid() {
 
   return (
     <div>
-      <MediaList isLoading={isLoading} items={items} />
     </div>
   );
 }
