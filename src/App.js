@@ -11,9 +11,9 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
+      <Router>
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <Router>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>

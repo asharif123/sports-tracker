@@ -6,11 +6,9 @@ export default function Navbar ({ menuOpen, setMenuOpen}) {
     <>
     <div className= {"navbar " + (menuOpen && "active")}>
       <div className="wrapper">
-        <div className="left">
-          <a href="#" alt = "loading" className="logo">
+          <h1 className="title">
             Sports Dome
-          </a>
-        </div>
+          </h1>
         <div className="right">
           <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
             <span className="line1"></span>
@@ -20,6 +18,7 @@ export default function Navbar ({ menuOpen, setMenuOpen}) {
         </div>
       </div>
       </div>
+     
     </>
 
 );

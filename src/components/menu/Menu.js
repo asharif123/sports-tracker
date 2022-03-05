@@ -1,28 +1,34 @@
 import "./menu.scss";
+import { NavLink  } from "react-router-dom";
+
 
 export default function Menu({ menuOpen, setMenuOpen }) {
   return (
 
 <>
+
     <div className={"menu " + (menuOpen && "active")}>
         <ul>
             <li onClick={() =>setMenuOpen(false)}>
-                <a href="#intro">Home</a>
+                <NavLink to="/">Home</NavLink>
             </li>
             <li onClick={() =>setMenuOpen(false)}>
-                <a href="#">Sports News</a>
+                <NavLink to="/media">Sports News</NavLink>
             </li>
             <li onClick={() =>setMenuOpen(false)}>
-                <a href="#">Game Highlights</a>
+                <NavLink to="/highlights">Game Highlights</NavLink>
             </li>
             <li onClick={() =>setMenuOpen(false)}>
-                <a href="#login">Login</a>
+                <NavLink to="/login">Login</NavLink>
             </li>
             <li onClick={() =>setMenuOpen(false)}>
-                <a href="#signup">Signup</a>
+                <NavLink to="/signup">Signup</NavLink>
             </li>
         </ul>
     </div>
+    
 </>
   )
 }
+
+
