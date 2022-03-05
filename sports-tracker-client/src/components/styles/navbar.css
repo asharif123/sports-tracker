@@ -1,0 +1,52 @@
+
+
+.navbarButton {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+
+.navbarButton-link {
+    background-color: #474749;
+    background-image: -webkit-linear-gradient(283deg, rgba(255, 255, 255, 0.1) 50%, transparent 55%),-webkit-linear-gradient(top, rgba(255, 255, 255, 0.15), transparent);
+    border-radius: 6px;
+    box-shadow: 0 0 0 1px #404143 inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 4px 0 0      #464649,0 4px 0 1px rgba(0, 0, 0, 0.4),0 4px 4px 1px rgba(0, 0, 0, 0.5);
+    color: white !important;
+    display: block;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    height: 61px;
+    letter-spacing: -1px;
+    line-height: 6px;
+    margin: 5px;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    text-decoration: none !important;
+    -webkit-transition: all .2s linear;
+    width: 186px;
+}
+
+.navbarButton-link:hover {
+    background-color: #5158E0;
+    position: relative;
+    top: -1px;
+    box-shadow: 0 0 0 1px #163772 inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 5px 0 0      #333797,0 5px 0 1px rgba(0, 0, 0, 0.4),0 5px 8px 1px rgba(0, 0, 0, 0.5);
+    }
+
+
+
+
+
+
+
+

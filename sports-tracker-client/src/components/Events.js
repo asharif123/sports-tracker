@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import EventList from "./EventList";
 import { Button } from "react-bootstrap";
+import '../components/styles/navbar.css';
 
 function Event() {
   const [sportType, setSportType] = useState("");
@@ -29,23 +30,23 @@ function Event() {
 
   return (
     <>
-      <div>
-        <Button variant="secondary" onClick={() => setSportType("1")}>
+      <div className="navbarButton">
+        <Button className="navbarButton-link" variant="secondary" onClick={() => setSportType("1")}>
           Soccer/Football
         </Button>
-        <Button variant="secondary" onClick={() => setSportType("2")}>
+        <Button className="navbarButton-link" variant="secondary" onClick={() => setSportType("2")}>
           Tennis
         </Button>
-        <Button variant="secondary" onClick={() => setSportType("3")}>
+        <Button className="navbarButton-link" variant="secondary" onClick={() => setSportType("3")}>
           Basketball
         </Button>
-        <Button variant="secondary" onClick={() => setSportType("4")}>
+        <Button className="navbarButton-link" variant="secondary" onClick={() => setSportType("4")}>
           Ice Hockey
         </Button>
-        <Button variant="secondary" onClick={() => setSportType("5")}>
+        <Button className="navbarButton-link" variant="secondary" onClick={() => setSportType("5")}>
           Volleyball
         </Button>
-        <Button variant="secondary" onClick={() => setSportType("6")}>
+        <Button className="navbarButton-link" variant="secondary" onClick={() => setSportType("6")}>
           Handball
         </Button>
       </div>
