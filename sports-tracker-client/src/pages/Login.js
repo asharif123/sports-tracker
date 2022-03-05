@@ -3,13 +3,15 @@ import React, { useState } from 'react';
 import { Button } from "react-bootstrap";
 import "../pages/styles/Login.css";
 import { checkLoginPassword, validateLoginEmail } from '../utils/helpers';
+
+const apiEndpoint = process.env.NODE_ENV === "production" ? "https://someappname.herokuapp.com" : "http://localhost:3001"
+
 function Login() {
   const [emailSignup, setEmailSignup] = useState("");
   const [userNameSignup, setUserNameSignup] = useState("");
   const [passwordSignup, setPasswordSignup] = useState("");
 
   const [emailLogin, setEmailLogin] = useState("");
-  const [userNameLogin, setUserNameLogin] = useState("");
   const [passwordLogin, setPasswordLogin] = useState("");
 
   const [errorMessage, setErrorMessage] = useState("");
@@ -35,14 +37,12 @@ function Login() {
 
     if (inputType === "emailLogin") {
       setEmailLogin(inputValue);
-    } else if (inputType === "userNameLogin") {
-      setUserNameLogin(inputValue);
     } else {
       setPasswordLogin(inputValue);
     }
   };
 
-  const handleFormSignup = (e) => {
+  const handleFormSignup = async (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
 
@@ -57,18 +57,37 @@ function Login() {
       return;
     }
 
+    if (userNameSignup && emailSignup && passwordSignup) {
+        const response = await fetch(apiEndpoint + '/signup', {
+            method: 'POST',
+            body: JSON.stringify({userNameSignup, emailSignup, passwordSignup}),
+            headers: { 'Content-Type': 'application/json' },
+        });  
+        if (response.ok) {
+          console.log("SUCCESS!")
+        }
+      
+    }
+
     // If everything goes according to plan, we want to clear out the input after a successful registration.
     setUserNameSignup("");
     setEmailSignup("");
     setPasswordSignup("");
   };
 
-  const handleFormLogin = (e) => {
+  const handleFormLogin = async (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
 
+    if (emailLogin && passwordLogin) {
+        const response = await fetch(apiEndpoint + '/login', {
+            method: 'POST',
+            body: JSON.stringify({emailLogin, passwordLogin}),
+            headers: { 'Content-Type': 'application/json' },
+        });
+    }
+
     //use sessions to determine if user already exists or if incorrect password
-    setUserNameLogin("");
     setEmailLogin("");
     setPasswordLogin("");
   };
@@ -138,7 +157,9 @@ function Login() {
           Login
         </Button>
       </Form>
+      
     </div>
+    
   );
 }
 

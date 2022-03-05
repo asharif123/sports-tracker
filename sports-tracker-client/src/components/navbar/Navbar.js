@@ -4,7 +4,7 @@ import "./navbar.scss";
 export default function Navbar ({ menuOpen, setMenuOpen}) {
   return (
     <>
-    <div className= {"navbar " + (menuOpen && "active")}>
+    <div className= {"navbar "}>
       <div className="wrapper">
           <h1 className="title">
             Sports Dome

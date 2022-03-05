@@ -1,5 +1,5 @@
-import Navbar from "../../sports-tracker/src/components/navbar/Navbar";
-import Menu from "../src/components/menu/Menu";
+import Navbar from "./components/navbar/Navbar";
+import Menu from "./components/menu/Menu";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
