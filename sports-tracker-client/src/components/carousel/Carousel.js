@@ -27,7 +27,6 @@ function Carousel(props) {
           <form action={article.url} target="_blank">
             <input type="submit" value="View Article" />
           </form>
-          <p>date: {article.publishedAt}</p>
           </div>
         </div>
         ))} 

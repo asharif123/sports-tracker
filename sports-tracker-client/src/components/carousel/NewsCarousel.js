@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Carousel from "./Carousel";
 
+
 import "./carousel.css";
 
 
@@ -11,15 +12,15 @@ function NewsCarousel() {
   
     useEffect(() => {
       const fetchAPI = async () => {
-        const result = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=29a6fdefaa474865ad7b23fb0e63c74e`, {
+        const result = await axios.get(`https://newsapi.org/v2/top-headlines?country=us`, {
          params: { 
             page: 1,
             pageSize: 10,
             category: "sports",
          },
-         /* headers: {
+         headers: {
             "X-Api-Key": process.env.REACT_APP_X_API_KEY,
-          }, */
+          },
         });
         console.log(result.data.articles);
         setArticles(result.data.articles);
@@ -29,9 +30,9 @@ function NewsCarousel() {
     }, []);
    
     return (
-      <div className="carGrid">
-        <Carousel isLoading={isLoading} articles={articles} />
-      </div>
+        <div className="carGrid">
+          <Carousel isLoading={isLoading} articles={articles} />
+        </div>
     );
     }
 export default NewsCarousel;
