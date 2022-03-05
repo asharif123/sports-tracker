@@ -4,7 +4,14 @@ https://flickity.metafizzy.co
 
 .flickity-enabled {
     position: relative;
-    width: 75%;
+    width: 80%;
+  }
+
+  @media screen and (max-width: 576px) {
+    .flickity-enabled {
+      position: relative;
+      width: 100%;
+    }
   }
   
   .flickity-enabled:focus {
