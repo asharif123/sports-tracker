@@ -13,7 +13,7 @@ export default function Menu({ menuOpen, setMenuOpen }) {
                 <NavLink to="/">Home</NavLink>
             </li>
             <li onClick={() =>setMenuOpen(false)}>
-                <NavLink to="/media">Sports News</NavLink>
+                <NavLink to="/newspage">Sports News</NavLink>
             </li>
             <li onClick={() =>setMenuOpen(false)}>
                 <NavLink to="/highlights">Game Highlights</NavLink>

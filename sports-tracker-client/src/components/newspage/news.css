@@ -1,0 +1,9 @@
+.newsBanner {
+    display: grid;
+    width: 100%;
+    background-color: rgb(85, 7, 121);
+    color: white;
+    text-align: center;
+    margin: 20px 0 20px 0;
+
+}

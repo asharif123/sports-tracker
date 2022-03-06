@@ -8,7 +8,7 @@ function Home() {
   return (
     <div>
       {/* <NewsBar />; */}
-      <MediaGrid />;
+      {/* <MediaGrid />; */}
       <NewsCarousel/>
       <Events />
     </div>

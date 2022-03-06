@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import News from "./pages/News";
 import ErrorPage from "./pages/Error";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/newspage" element={<News />}></Route>
           <Route path="*" element={<ErrorPage />}></Route>
         </Routes>
       </Router>
