@@ -7,17 +7,19 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import News from "./pages/News";
 import ErrorPage from "./pages/Error";
+import Highlights from "./pages/Highlights";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
       <Router>
-      <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/highlights" element={<Highlights />}></Route>
           <Route path="/newspage" element={<News />}></Route>
           <Route path="*" element={<ErrorPage />}></Route>
         </Routes>

@@ -2,17 +2,25 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import EventList from "./EventList";
 import { Button } from "react-bootstrap";
-import '../components/styles/navbar.css';
+import "../components/styles/navbar.css";
+import moment from "moment";
 
 function Event() {
   const [sportType, setSportType] = useState("");
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [currentDate, setCurrentDate] = useState("2022-03-06");
+
+  useEffect(() => {
+    let date = moment(new Date()).format("YYYY-MM-DD");
+    setCurrentDate(date);
+    console.log(currentDate);
+  });
 
   useEffect(() => {
     const fetchSport = async () => {
       const result = await axios.get(
-        `https://sportscore1.p.rapidapi.com/sports/${sportType}/events`,
+        `https://sportscore1.p.rapidapi.com/sports/${sportType}/events/date/${currentDate}`,
         {
           params: { page: "1" },
           headers: {
@@ -50,10 +58,6 @@ function Event() {
           Handball
         </Button>
       </div>
-      <h1>{sportType}</h1>
-      {/* {items.map((item) => {
-        return <pre>{JSON.stringify(item)}</pre>;
-      })} */}
       <EventList isLoading={isLoading} items={items} />
     </>
   );
