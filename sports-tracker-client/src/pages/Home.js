@@ -6,8 +6,8 @@ function Home() {
   return (
     <div>
       <NewsCarousel />
-      {/* <Events /> */}
-      <Sports />
+      <Events />
+      {/* <Sports /> */}
     </div>
   );
 }
