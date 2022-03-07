@@ -4,7 +4,9 @@ import { Button } from "react-bootstrap";
 import "../pages/styles/Login.css";
 import { checkLoginPassword, validateLoginEmail } from '../utils/helpers';
 
-const apiEndpoint = process.env.NODE_ENV === "production" ? "https://someappname.herokuapp.com" : "http://localhost:3001"
+
+const apiEndpoint = process.env.NODE_ENV === "production" ? "https://someappname.herokuapp.com" : "http://localhost:3001";
+
 
 function Login() {
   const [emailSignup, setEmailSignup] = useState("");
@@ -13,6 +15,9 @@ function Login() {
 
   const [emailLogin, setEmailLogin] = useState("");
   const [passwordLogin, setPasswordLogin] = useState("");
+
+  //form validation
+  const [validated, setValidated] = useState(false);
 
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -92,18 +97,22 @@ function Login() {
     setPasswordLogin("");
   };
 
+  
+
   return (
     <div className="homePage">
-      <Form style={{ width: "18rem" }}>
+      <Form style={{ width: "18rem" }} >
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Username</Form.Label>
           <Form.Control
             type="text"
             name="userNameSignup"
+            required
             value={userNameSignup}
             onChange={handleSignupChange}
             placeholder="Create username"
           />
+          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">

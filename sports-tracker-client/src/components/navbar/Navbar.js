@@ -1,6 +1,5 @@
 import "./navbar.scss";
 
-
 export default function Navbar ({ menuOpen, setMenuOpen}) {
   return (
     <>
