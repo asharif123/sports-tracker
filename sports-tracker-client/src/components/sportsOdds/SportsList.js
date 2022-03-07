@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { ListGroup, ListGroupItem, Col } from "react-bootstrap";
 import axios from "axios";
 import SportsScores from "./SportsScores";
+import MediaGrid from "../MediaGrid";
 
 function SportsList({ isLoading, items }) {
-  const [sportName, setSportName] = useState("americanfootball_nfl");
+  const [sportName, setSportName] = useState("basketball_nba");
   const [gameScores, setGameScores] = useState([]);
 
   function handleClick(event) {
@@ -27,6 +28,35 @@ function SportsList({ isLoading, items }) {
     fetchScores();
   }, [sportName]);
 
+  //
+  return (
+    <>
+      <Col lg={4} md={6} sm={12}>
+        <ListGroup className="text-center">
+          <ListGroupItem id="americanfootball_ncaaf" action onClick={handleClick}>
+            NCAAF
+          </ListGroupItem>
+          <ListGroupItem id="americanfootball_nfl" action onClick={handleClick}>
+            NFL
+          </ListGroupItem>
+          <ListGroupItem id="baseball_mlb" action onClick={handleClick}>
+            MLB
+          </ListGroupItem>
+          <ListGroupItem id="basketball_nba" action onClick={handleClick}>
+            NBA
+          </ListGroupItem>
+          <ListGroupItem id="basketball_ncaab" action onClick={handleClick}>
+            NCAAB
+          </ListGroupItem>
+        </ListGroup>
+      </Col>
+      <Col lg={8} md={6} sm={12}>
+        <SportsScores gameScores={gameScores} />
+      </Col>
+    </>
+  );
+
+  // For full map of options
   return isLoading ? (
     <h1>Loading</h1>
   ) : (
