@@ -29,9 +29,9 @@ app.use(express.urlencoded({ extended: true }));
  if(process.env.NODE_ENV === "production"){
      app.use(express.static(path.join(__dirname, "./sports-tracker-client/build")));
  };
-app.get("/test", (req, res) => {
-  res.status(200).json('test')
-})
+// app.get("/test", (req, res) => {
+//   res.status(200).json('test')
+// })
 app.use(routes);
 app.get("*", (req,res)=> res.sendFile(path.join(__dirname, "./sports-tracker-client/public/index.html")));
 //app.listen(PORT, () => console.log("Now listening"));

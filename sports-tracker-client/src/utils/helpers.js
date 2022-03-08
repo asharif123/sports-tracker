@@ -4,10 +4,22 @@ export function validateLoginEmail(email) {
   }
   
   export function checkLoginPassword(input) {
-    const passw = /^[A-Za-z]\w{7,14}$/;
+    //must have at least 1 uppercase, lowercase and 8 characters!
+    const passw = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
     if (input.match(passw)) {
       return true;
     }
     return false;
   }
+
+
+  export function checkUserName(input) {
+  //must have at least 6 characters!
+    const username = /^([a-zA-Z0-9]{6,})$/;
+    if (input.match(username)) {
+      return true;
+    }
+  return false;
+}
+
   

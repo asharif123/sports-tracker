@@ -1,8 +1,9 @@
 import Form from "react-bootstrap/Form";
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Button } from "react-bootstrap";
 import "../pages/styles/Login.css";
-import { checkLoginPassword, validateLoginEmail } from '../utils/helpers';
+import { checkLoginPassword, validateLoginEmail, checkUserName } from '../utils/helpers';
 
 
 const apiEndpoint = process.env.NODE_ENV === "production" ? "https://someappname.herokuapp.com" : "http://localhost:3001";
@@ -51,16 +52,31 @@ function Login() {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
 
+    if (userNameSignup.length < 6) {
+      window.alert("Username must have at least 6 characters!")
+    }
+    // return; 
+
     if (!validateLoginEmail(emailSignup) || !userNameSignup) {
-      setErrorMessage("Email or username is invalid");
+      window.alert("Email is invalid format!");
       // We want to exit out of this code block if something is wrong so that the user can correct it
       return;
       // Then we check to see if the password is not valid. If so, we set an error message regarding the password.
     }
+
     if (!checkLoginPassword(passwordSignup)) {
-      setErrorMessage(`Choose a more secure password for the account: ${userNameSignup}`);
+      window.alert("Password must be at least 8 characters having lowercase, uppercase and special characters!");
       return;
     }
+
+    if (!checkUserName(userNameSignup)) {
+      window.alert("Username must be at least 6 characters!");
+      return;
+    }
+
+    //check if email user entered exists
+
+
 
     if (userNameSignup && emailSignup && passwordSignup) {
         const response = await fetch(apiEndpoint + '/signup', {
@@ -83,6 +99,18 @@ function Login() {
   const handleFormLogin = async (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
+
+    if (!validateLoginEmail(emailLogin)) {
+      window.alert("Email is invalid format!");
+      // We want to exit out of this code block if something is wrong so that the user can correct it
+      return;
+      // Then we check to see if the password is not valid. If so, we set an error message regarding the password.
+    }
+
+    if (!checkLoginPassword(passwordLogin)) {
+      window.alert("Password must be at least 8 characters having lowercase, uppercase and special characters!");
+      return;
+    }
 
     if (emailLogin && passwordLogin) {
         const response = await fetch(apiEndpoint + '/login', {
@@ -171,5 +199,8 @@ function Login() {
     
   );
 }
+Login.propTypes = {
+  setToken: PropTypes.func.isRequired
+};
 
 export default Login;
