@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Button } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom'; 
 import "../pages/styles/Login.css";
-import { checkLoginPassword, validateLoginEmail } from '../utils/helpers';
+// import { checkLoginPassword, validateLoginEmail } from '../utils/helpers';
 import LoginCarousel from "../components/loginCarousel/LoginCarousel";
 
 import { checkLoginPassword, validateLoginEmail, checkUserName } from '../utils/helpers';
@@ -224,8 +224,8 @@ function Login() {
     
   );
 }
-Login.propTypes = {
-  setToken: PropTypes.func.isRequired
-};
+// Login.propTypes = {
+//   setToken: PropTypes.func.isRequired
+// };
 
 export default Login;
