@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { Button } from "react-bootstrap";
 import "../pages/styles/Login.css";
 import { checkLoginPassword, validateLoginEmail } from '../utils/helpers';
+import LoginCarousel from "../components/loginCarousel/LoginCarousel";
+
 
 
 const apiEndpoint = process.env.NODE_ENV === "production" ? "https://someappname.herokuapp.com" : "http://localhost:3001";
@@ -100,6 +102,8 @@ function Login() {
   
 
   return (
+    <>
+    <div className="wrapper">
     <div className="homePage">
       <Form style={{ width: "18rem" }} >
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -166,8 +170,11 @@ function Login() {
           Login
         </Button>
       </Form>
-      
     </div>
+    <LoginCarousel/>
+    </div>
+   </>
+  
     
   );
 }
