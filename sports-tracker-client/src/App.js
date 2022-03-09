@@ -14,9 +14,7 @@ function App() {
 
   //verify if user logged in
   const [token, setToken] = useState();
-  if(!token) {
-    return <Login setToken={setToken} />
-  }
+
   
   return (
     <>

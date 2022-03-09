@@ -2,17 +2,22 @@ import Form from "react-bootstrap/Form";
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom'; 
 import "../pages/styles/Login.css";
-import { checkLoginPassword, validateLoginEmail } from '../utils/helpers';
+// import { checkLoginPassword, validateLoginEmail } from '../utils/helpers';
 import LoginCarousel from "../components/loginCarousel/LoginCarousel";
 
 import { checkLoginPassword, validateLoginEmail, checkUserName } from '../utils/helpers';
-
+import {useContext} from "react";
+import {CountContext} from "../ContextProvider";
 
 const apiEndpoint = process.env.NODE_ENV === "production" ? "https://someappname.herokuapp.com" : "http://localhost:3001";
 
 
 function Login() {
+  const { state, dispatch } = useContext(CountContext);
+
+  const navigate = useNavigate();
   const [emailSignup, setEmailSignup] = useState("");
   const [userNameSignup, setUserNameSignup] = useState("");
   const [passwordSignup, setPasswordSignup] = useState("");
@@ -86,9 +91,12 @@ function Login() {
             method: 'POST',
             body: JSON.stringify({userNameSignup, emailSignup, passwordSignup}),
             headers: { 'Content-Type': 'application/json' },
-        });  
+        }); 
+        const data = await response.json() 
         if (response.ok) {
-          console.log("SUCCESS!")
+          console.log("SUCCESS!", data)
+          dispatch({ type: 'LOGGIN' });
+          navigate('/highlights')
         }
       
     }
@@ -121,7 +129,16 @@ function Login() {
             body: JSON.stringify({emailLogin, passwordLogin}),
             headers: { 'Content-Type': 'application/json' },
         });
+    const loginData = await response.json() 
+
+    if (response.ok) {
+        console.log(loginData);
+        dispatch({ type: 'LOGGIN' });
+        navigate('/highlights')
+      }
+
     }
+
 
     //use sessions to determine if user already exists or if incorrect password
     setEmailLogin("");
@@ -207,8 +224,8 @@ function Login() {
     
   );
 }
-Login.propTypes = {
-  setToken: PropTypes.func.isRequired
-};
+// Login.propTypes = {
+//   setToken: PropTypes.func.isRequired
+// };
 
 export default Login;
