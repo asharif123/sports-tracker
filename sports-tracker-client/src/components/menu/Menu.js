@@ -19,11 +19,11 @@ export default function Menu({ menuOpen, setMenuOpen }) {
                 <NavLink to="/highlights">Game Highlights</NavLink>
             </li>
             <li onClick={() =>setMenuOpen(false)}>
-                <NavLink to="/login">Login</NavLink>
+                <NavLink to="/logout">Logout</NavLink>
             </li>
-            <li onClick={() =>setMenuOpen(false)}>
+            {/* <li onClick={() =>setMenuOpen(false)}>
                 <NavLink to="/login">Signup</NavLink>
-            </li>
+            </li> */}
         </ul>
     </div>
     

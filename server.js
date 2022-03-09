@@ -16,6 +16,11 @@ const PORT = process.env.PORT || 3001;
 
 const sess = {
     secret: 'Super secret secret',
+      cookie: {
+    // Stored in milliseconds (86400 === 1 day)
+        maxAge: 864000000000,
+  },
+
   //starndard settings
     resave: false,
     saveUninitialized: false,
@@ -34,7 +39,6 @@ app.use(express.urlencoded({ extended: true }));
 // })
 app.use(routes);
 app.get("*", (req,res)=> res.sendFile(path.join(__dirname, "./sports-tracker-client/public/index.html")));
-//app.listen(PORT, () => console.log("Now listening"));
 sequelize.sync({ force: false }).then(() => {
    app.listen(PORT, () => console.log("Now listening"));
 });
