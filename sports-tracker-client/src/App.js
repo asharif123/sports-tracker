@@ -12,10 +12,12 @@ import Highlights from "./pages/Highlights";
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  //verify if user logged in
+  // verify if user logged in
   const [token, setToken] = useState();
+  if (!token) {
+    return <Login setToken={setToken} />;
+  }
 
-  
   return (
     <>
       <Router>

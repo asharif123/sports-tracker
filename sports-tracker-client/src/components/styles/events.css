@@ -1,19 +1,21 @@
 .home-away-teams {
-    display: flex;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
 }
 
 .gameCard {
-	transform-style: preserve-3d;
-    border-radius: 20px;
-	transform: rotatey(0deg) translatex(0px) translatey(0px);
-    transition: all 0.6s cubic-bezier(0.680, -0.550, 0.265, 1.550);
-	box-shadow: 4px 4px 20px rgba(0,0,0,0.4);
-	margin: 5px;
-	cursor: pointer;
-    background: linear-gradient(155deg, #2980b9 0%,#9b59b6 100%);
-    color: white;
+  transform-style: preserve-3d;
+  border-radius: 20px;
+  transform: rotatey(0deg) translatex(0px) translatey(0px);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+  margin: 5px;
+  cursor: pointer;
+  background: linear-gradient(155deg, #2980b9 0%, #9b59b6 100%);
+  color: white;
 }
 
 .gameCard:hover {
-    transform: rotatey(45deg) translatex(0px) translatey(0px);
+  transform: rotatey(30deg) translatex(0px) translatey(0px);
 }
