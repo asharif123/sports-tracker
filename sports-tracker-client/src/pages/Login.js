@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import { Button } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom'; 
 import "../pages/styles/Login.css";
+import { checkLoginPassword, validateLoginEmail } from '../utils/helpers';
 import LoginCarousel from "../components/loginCarousel/LoginCarousel";
+
 import { checkLoginPassword, validateLoginEmail, checkUserName } from '../utils/helpers';
 import {useContext} from "react";
 import {CountContext} from "../ContextProvider";
@@ -146,6 +148,8 @@ function Login() {
   
 
   return (
+    <>
+    <div className="wrapper">
     <div className="homePage">
       <Form style={{ width: "18rem" }} >
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -212,8 +216,11 @@ function Login() {
           Login
         </Button>
       </Form>
-      
     </div>
+    <LoginCarousel/>
+    </div>
+   </>
+  
     
   );
 }
