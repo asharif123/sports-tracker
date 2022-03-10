@@ -25,11 +25,6 @@ function Login() {
   const [emailLogin, setEmailLogin] = useState("");
   const [passwordLogin, setPasswordLogin] = useState("");
 
-  //form validation
-  const [validated, setValidated] = useState(false);
-
-  const [errorMessage, setErrorMessage] = useState("");
-
   const handleSignupChange = (e) => {
     const { target } = e;
     const inputType = target.name;
@@ -94,7 +89,6 @@ function Login() {
         }); 
         const data = await response.json() 
         if (response.ok) {
-          console.log("SUCCESS!", data)
           dispatch({ type: 'LOGGIN' });
           navigate('/highlights')
         }
