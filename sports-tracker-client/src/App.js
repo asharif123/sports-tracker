@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Logout from "./pages/Logout";
 import News from "./pages/News";
 import ErrorPage from "./pages/Error";
 import Highlights from "./pages/Highlights";
@@ -12,11 +13,6 @@ import Highlights from "./pages/Highlights";
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // verify if user logged in
-  const [token, setToken] = useState();
-  if (!token) {
-    return <Login setToken={setToken} />;
-  }
 
   return (
     <>
@@ -26,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/logout" element={<Logout />}></Route>
           <Route path="/highlights" element={<Highlights />}></Route>
           <Route path="/newspage" element={<News />}></Route>
           <Route path="*" element={<ErrorPage />}></Route>
