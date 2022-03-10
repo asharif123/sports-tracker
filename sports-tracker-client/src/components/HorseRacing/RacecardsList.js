@@ -4,18 +4,17 @@ import { FaStickerMule } from "react-icons/fa";
 import RaceDetails from "./RaceDetails";
 
 function RacecardsList({ isLoading, items }) {
-  const [raceDetails, setRaceDetails] = useState("");
+  const [racingDetails, setRaceDetails] = useState();
   const [isButtonPressed, setIsButtonPressed] = useState(false);
 
   function handleButtonPressed(id) {
     console.log("handle button pressed function", id);
-    setIsButtonPressed(true);
     setRaceDetails(id);
+    setIsButtonPressed(true);
   }
 
-  console.log("itemsss", items);
   return isButtonPressed ? (
-    <RaceDetails raceDetails={raceDetails} />
+    <RaceDetails racingDetails={racingDetails} />
   ) : (
     <>
       <Container>
