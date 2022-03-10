@@ -4,6 +4,7 @@ import Sports from "../components/sportsOdds/Sports";
 import { useContext } from "react";
 import { Navigate } from "react-router-dom";
 import { CountContext } from "../ContextProvider";
+import Racecards from "../components/HorseRacing/Racecards";
 
 function Home() {
   const { state, dispatch } = useContext(CountContext);
@@ -11,7 +12,8 @@ function Home() {
   return (
     <div>
       <NewsCarousel />
-      <Sports />
+      {/* <Sports /> */}
+      <Racecards />
     </div>
   );
 }
