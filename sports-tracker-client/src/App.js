@@ -27,7 +27,7 @@ function App() {
     if (isLoggedIn) {
       console.log(isLoggedIn);
       dispatch({ type: 'LOGGIN' });
-      navigate('/highlights')
+      navigate('/')
     }
   }, []);
 

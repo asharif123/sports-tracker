@@ -3,7 +3,6 @@ import NewsCarousel from "../components/carousel/NewsCarousel";
 import Sports from "../components/sportsOdds/Sports";
 import Login from "../pages/Login";
 import { useContext } from "react";
-import { Navigate } from "react-router-dom";
 import { CountContext } from "../ContextProvider";
 import Racecards from "../components/HorseRacing/Racecards";
 
@@ -13,8 +12,8 @@ function Home() {
   return (
     <div>
       <>{!state.loggedIn ? <Login /> : <NewsCarousel />}</>
-      {/* <Sports /> */}
-      {/* <Racecards /> */}
+      {/* <Sports />
+      <Racecards /> */}
       <>{!state.loggedIn ? <Login /> : <Racecards />}</>
     </div>
   );
