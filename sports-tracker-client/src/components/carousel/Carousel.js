@@ -1,7 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Flickity from "react-flickity-component";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 import "./carousel.css";
 import "./flickity.css";

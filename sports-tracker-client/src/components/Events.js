@@ -9,22 +9,22 @@ function Event() {
   const [sportType, setSportType] = useState("3");
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [currentDate, setCurrentDate] = useState("2022-03-06");
+  const [currentDate, setCurrentDate] = useState("2022-03-11");
 
   useEffect(() => {
     let date = moment(new Date()).format("YYYY-MM-DD");
     setCurrentDate(date);
     console.log(currentDate);
-  });
+  }, []);
 
   useEffect(() => {
     const fetchSport = async () => {
       const result = await axios.get(
-        'https://horse-racing.p.rapidapi.com/racecards',
+        `https://sportscore1.p.rapidapi.com/sports/${sportType}/events/date/${currentDate}`,
         {
-          // params: { page: "1" },
+          params: { page: "1" },
           headers: {
-            'x-rapidapi-host': 'horse-racing.p.rapidapi.com',
+            "x-rapidapi-host": "sportscore1.p.rapidapi.com",
             "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY,
           },
         }

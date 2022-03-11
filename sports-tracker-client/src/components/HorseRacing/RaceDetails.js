@@ -3,12 +3,10 @@ import axios from "axios";
 import { Container, Row, Col, Table, ListGroup, Spinner, Button } from "react-bootstrap";
 import { FaHorseHead } from "react-icons/fa";
 
-function RaceDetails({ racingDetails }) {
-  console.log(racingDetails);
+function RaceDetails({ racingDetails, setIsButtonPressed }) {
   const [raceItems, setRaceItems] = useState([]);
   const [horseList, setHorseList] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  const [goBackButton, setGoBackButton] = useState(false);
 
   useEffect(() => {
     const fetchRaceDetails = async () => {
@@ -35,6 +33,9 @@ function RaceDetails({ racingDetails }) {
     <>
       <Container>
         <Row>
+          <Button variant="secondary" onClick={() => setIsButtonPressed(false)}>
+            Return To Listings
+          </Button>
           {/* EVENT STUFF */}
           <h1>{raceItems.course}</h1>
           <h5>
@@ -94,7 +95,6 @@ function RaceDetails({ racingDetails }) {
                 </tbody>
               ))}
             </Table>
-            <Button onclick={() => setGoBackButton(true)}></Button>
           </Container>
         </Row>
       </Container>
