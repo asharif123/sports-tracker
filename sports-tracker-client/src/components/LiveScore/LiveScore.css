@@ -1,0 +1,24 @@
+.ticker {
+    background-color: rgb(85, 7, 121);
+}
+
+.tickerItems {
+    text-align: center;
+    background-color: rgb(85, 7, 121);
+    color: white;
+    margin: auto 0 auto 0;
+}
+
+.tickerItems img{
+    margin: 0;
+}
+
+.tickerBar {
+    margin:auto;
+}
+
+.event {
+    border-color: white !important;
+    border: 2px !important;
+    border-style:solid !important;
+}
