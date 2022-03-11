@@ -21,9 +21,7 @@ export default function Menu({ menuOpen, setMenuOpen }) {
             <li onClick={() =>setMenuOpen(false)}>
                 <NavLink to="/logout">Logout</NavLink>
             </li>
-            {/* <li onClick={() =>setMenuOpen(false)}>
-                <NavLink to="/login">Signup</NavLink>
-            </li> */}
+          
         </ul>
     </div>
     
