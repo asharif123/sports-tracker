@@ -69,5 +69,19 @@
     }
   }
 }
-      
-    
+
+@media screen and (max-width: 300px) {
+  .title{
+    font-size: 25px;
+   
+  } 
+ 
+}
+
+@media screen and (max-width: 150px) {
+  .title{
+    display: none;
+   
+  } 
+ 
+}
