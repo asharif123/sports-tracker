@@ -4,6 +4,7 @@ import axios from "axios";
 import SportsScores from "./SportsScores";
 import MediaGrid from "../MediaGrid";
 import Events from "../Events";
+import Racecards from "../HorseRacing/Racecards";
 
 function SportsList({ isLoading, items }) {
   const [sportName, setSportName] = useState("basketball_nba");
@@ -64,7 +65,8 @@ function SportsList({ isLoading, items }) {
         <SportsScores gameScores={gameScores} />
       </Col>
       <Col lg={8} md={6} sm={12}>
-        <Events />
+        {/* <Events /> */}
+        {<Racecards />}
       </Col>
     </>
   );
