@@ -16,7 +16,7 @@
 }
 
 .logoutBtn {
-  animation: glitch 1s linear infinite;
+  animation: glitch 5s linear infinite;
   cursor: pointer;
 }
 

@@ -20,7 +20,7 @@ export const Logout = () => {
 
     return (
         <div className='logout'>
-            <h3> See you soon, Sports fan </h3>
+            <h3> See you soon, Sports fan! </h3>
         <button className='logoutBtn' onClick={logout}>Logout</button>
         </div>
     )
