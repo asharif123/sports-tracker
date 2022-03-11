@@ -17,25 +17,25 @@ function Event() {
     console.log(currentDate);
   });
 
-  // useEffect(() => {
-  //   const fetchSport = async () => {
-  //     const result = await axios.get(
-  //       `https://sportscore1.p.rapidapi.com/sports/${sportType}/events/date/${currentDate}`,
-  //       {
-  //         // params: { page: "1" },
-  //         headers: {
-  //           "x-rapidapi-host": "sportscore1.p.rapidapi.com",
-  //           "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY,
-  //         },
-  //       }
-  //     );
-  //     console.log(result.config.url);
-  //     console.log(result.data.data);
-  //     setItems(result.data.data);
-  //     setIsLoading(false);
-  //   };
-  //   fetchSport();
-  // }, [sportType]);
+  useEffect(() => {
+    const fetchSport = async () => {
+      const result = await axios.get(
+        'https://horse-racing.p.rapidapi.com/racecards',
+        {
+          // params: { page: "1" },
+          headers: {
+            'x-rapidapi-host': 'horse-racing.p.rapidapi.com',
+            "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY,
+          },
+        }
+      );
+      console.log(result.config.url);
+      console.log(result.data.data);
+      setItems(result.data.data);
+      setIsLoading(false);
+    };
+    fetchSport();
+  }, [sportType]);
 
   return (
     <>

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { CountContextProvider } from "./ContextProvider";
+import { BrowserRouter as Router } from 'react-router-dom'
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -10,7 +11,10 @@ ReactDOM.render(
    <CountContextProvider
     value={{ characters: [], loading: true, loggedIn: false }}
   >
-      <App />
+    <Router>
+       <App />
+    </Router>
+     
 
   </CountContextProvider>
   </React.StrictMode>,

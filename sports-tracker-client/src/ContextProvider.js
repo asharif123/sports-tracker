@@ -16,6 +16,7 @@ let reducer = (state, action) => {
   switch (action.type) {
     case 'LOGGIN':
       loggedIn = true;
+      console.log(loggedIn)
       return { ...state, loggedIn: true };
     case 'LOGOUT':
       loggedIn = false;

@@ -90,7 +90,7 @@ function Login() {
         const data = await response.json() 
         if (response.ok) {
           dispatch({ type: 'LOGGIN' });
-          navigate('/highlights')
+          navigate('/')
         }
       
     }
@@ -104,6 +104,8 @@ function Login() {
   const handleFormLogin = async (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
+
+    
 
     if (!validateLoginEmail(emailLogin)) {
       window.alert("Email is invalid format!");
@@ -128,7 +130,9 @@ function Login() {
     if (response.ok) {
         console.log(loginData);
         dispatch({ type: 'LOGGIN' });
-        navigate('/highlights')
+        //localStorage to store loggedIn user
+        localStorage.setItem('loggedIn', 'true');
+        navigate('/')
       }
 
     }
@@ -137,6 +141,8 @@ function Login() {
     //use sessions to determine if user already exists or if incorrect password
     setEmailLogin("");
     setPasswordLogin("");
+
+
   };
 
   
