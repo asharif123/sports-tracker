@@ -1,5 +1,6 @@
 import Navbar from "./components/navbar/Navbar";
 import Menu from "./components/menu/Menu";
+import LiveScore from "./components/LiveScore/LiveScore";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -35,6 +36,7 @@ function App() {
       
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        {!state.loggedIn ? <Login /> : <><LiveScore/></>}
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>
