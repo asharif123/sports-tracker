@@ -24,7 +24,7 @@ router.post("/signup", async (req, res, next) => {
 });
 
 // Login
-router.post("/login", async (req, res, next) => {
+router.post("/login", async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
