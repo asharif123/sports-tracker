@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
 const handleClick = (event) => {
-    window.open(`${event.target.id}`, '_blank');
-  };
+  window.open(`${event.target.id}`, "_blank");
+};
 
 function NewsList({ isLoading, articles }) {
   return isLoading ? (
@@ -14,9 +14,9 @@ function NewsList({ isLoading, articles }) {
         {articles.map((item) => (
           <Col lg={3} md={6} sm={10} xs={12}>
             <Card className="p-2 text-center">
-              <Card.Img src={item.urlToImage} />
+              <Card.Img src={item.urlToImage} style={{ height: "240px" }} />
               <Card.Body>
-                <Card.Title style={{ height: "100px" }}>{item.title}</Card.Title>
+                <Card.Title style={{ height: "150px" }}>{item.title}</Card.Title>
                 <Button
                   className="w-100"
                   variant="secondary"
