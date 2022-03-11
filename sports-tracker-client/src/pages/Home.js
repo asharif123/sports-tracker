@@ -11,10 +11,10 @@ function Home() {
 
   return (
     <div>
-      <>{!state.loggedIn ? <Login /> : <NewsCarousel />}</>
+      {!state.loggedIn ? <Login /> : <><NewsCarousel /> <Racecards /></>}
       {/* <Sports />
       <Racecards /> */}
-      <>{!state.loggedIn ? <Login /> : <Racecards />}</>
+      {/* <>{!state.loggedIn ? <Login /> : <Racecards />}</> */}
     </div>
   );
 }

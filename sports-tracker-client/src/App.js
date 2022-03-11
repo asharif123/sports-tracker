@@ -23,9 +23,8 @@ function App() {
   //when refreshing, user stays logged In
   
   useEffect(() => {
-    const isLoggedIn = JSON.parse(localStorage.getItem('loggedIn') || 'false');
+    let isLoggedIn = JSON.parse(localStorage.getItem('loggedIn') || 'false');
     if (isLoggedIn) {
-      console.log(isLoggedIn);
       dispatch({ type: 'LOGGIN' });
       navigate('/')
     }
