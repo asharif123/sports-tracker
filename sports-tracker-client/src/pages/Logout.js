@@ -8,17 +8,20 @@ const apiEndpoint = process.env.NODE_ENV === "production" ? "https://someappname
 export const Logout = () => {
     const { state, dispatch } = useContext(CountContext);
     const navigate = useNavigate();
-    const logout = async () => {
+    //if user is logged out and refreshes, user stays on login webpage
+    useEffect(async () => {
         const response = await fetch(apiEndpoint + '/logout', {});
 
         if (response.ok) {
             dispatch({ type: 'LOGOUT' });
-            navigate('/login')
-        }
-    }
+            localStorage.setItem('loggedIn', 'false');
+            navigate('/')
+          }
+    },
+    []) 
 
     return (
-        <div onClick={logout}>Logout</div>
+        <div>Logout</div>
     )
 }
 

@@ -136,8 +136,6 @@ function Login() {
       }
 
     }
-
-
     //use sessions to determine if user already exists or if incorrect password
     setEmailLogin("");
     setPasswordLogin("");

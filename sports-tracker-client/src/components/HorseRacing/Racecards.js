@@ -20,6 +20,7 @@ function Racecards() {
         },
       });
       console.log(result.config.url);
+      console.log(result.data);
       setItems(result.data);
       setIsLoading(false);
     };
