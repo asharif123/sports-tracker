@@ -8,18 +8,17 @@ const apiEndpoint = process.env.NODE_ENV === "production" ? "https://someappname
 export const Logout = () => {
     const { state, dispatch } = useContext(CountContext);
     const navigate = useNavigate();
-    useEffect(async () => {
+    const logout = async () => {
         const response = await fetch(apiEndpoint + '/logout', {});
 
         if (response.ok) {
             dispatch({ type: 'LOGOUT' });
             navigate('/login')
         }
-    },
-    []) 
+    }
 
     return (
-        <div>Logout</div>
+        <div onClick={logout}>Logout</div>
     )
 }
 
