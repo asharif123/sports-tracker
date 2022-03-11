@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Container, Row, Col, Table, ListGroup } from "react-bootstrap";
+import { Container, Row, Col, Table, ListGroup, Spinner } from "react-bootstrap";
 import { FaHorseHead } from "react-icons/fa";
 
 function RaceDetails({ racingDetails }) {
   console.log(racingDetails);
   const [raceItems, setRaceItems] = useState([]);
   const [horseList, setHorseList] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchRaceDetails = async () => {
@@ -16,16 +17,20 @@ function RaceDetails({ racingDetails }) {
           "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY,
         },
       });
-      console.log(result);
       console.log("result.data", result.data);
       setRaceItems(result.data);
       console.log("result.data.horses", result.data.horses);
       setHorseList(result.data.horses);
+      setIsLoading(false);
     };
     fetchRaceDetails();
   }, []);
 
-  return (
+  return isLoading ? (
+    <Container className="d-flex justify-content-center">
+      <Spinner animation="border" />
+    </Container>
+  ) : (
     <>
       <Container>
         <Row>
@@ -56,9 +61,13 @@ function RaceDetails({ racingDetails }) {
                   </th>
                   <th>Age</th>
                   <th>
-                    WGT <br /> OR
+                    WGT
+                    <br />
+                    OR
                   </th>
-                  <th>Jockey</th>
+                  <th>
+                    Jockey <br /> Trainer
+                  </th>
                   <th>SP/Odds</th>
                 </tr>
               </thead>
@@ -66,11 +75,10 @@ function RaceDetails({ racingDetails }) {
                 <tbody key={index}>
                   <tr>
                     <td>
-                      {horse.number} <br /> {horse.form}{" "}
+                      {horse.position} <br /> {horse.form}{" "}
                     </td>
                     <th>
-                      {horse.horse} <br />
-                      {horse.distance_beaten}
+                      {horse.horse} <br /> {horse.distance_beaten}
                     </th>
 
                     <td>{horse.age} </td>
