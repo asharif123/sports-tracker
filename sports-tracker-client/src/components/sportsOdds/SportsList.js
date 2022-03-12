@@ -6,8 +6,9 @@ import SportsScores from "./SportsScores";
 import Events from "../Events";
 import Racecards from "../HorseRacing/Racecards";
 
-function SportsList({ isLoading, items }) {
+function SportsList({ items }) {
   const [sportName, setSportName] = useState("basketball_nba");
+  const [isLoading, setIsLoading] = useState(true);
   const [gameScores, setGameScores] = useState([]);
 
   function handleClick(event) {
@@ -26,9 +27,10 @@ function SportsList({ isLoading, items }) {
       });
       console.log(result.data);
       setGameScores(result.data);
+      setIsLoading(false);
     };
     fetchScores();
-  }, [sportName]);
+  }, []);
 
   return isLoading ? (
     <h1>Loading</h1>
