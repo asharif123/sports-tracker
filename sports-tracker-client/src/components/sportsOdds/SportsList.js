@@ -3,7 +3,7 @@ import { Col, ButtonGroup, Dropdown, DropdownButton } from "react-bootstrap";
 import axios from "axios";
 import SportsScores from "./SportsScores";
 // import MediaGrid from "../MediaGrid";
-// import Events from "../Events";
+import Events from "../Events";
 import Racecards from "../HorseRacing/Racecards";
 
 function SportsList({ isLoading, items }) {
@@ -30,7 +30,9 @@ function SportsList({ isLoading, items }) {
     fetchScores();
   }, [sportName]);
 
-  return (
+  return isLoading ? (
+    <h1>Loading</h1>
+  ) : (
     <>
       <Col lg={3} md={4} sm={12}>
         <ButtonGroup>
@@ -64,10 +66,10 @@ function SportsList({ isLoading, items }) {
 
         <SportsScores gameScores={gameScores} />
       </Col>
-      <Col lg={6} md={6} sm={12}>
-        {/* <Events /> */}
+      <Col lg={6} md={8} sm={12}>
         {<Racecards />}
       </Col>
+      <Events />
       <Col lg={3} md={6} sm={12}></Col>
     </>
   );
