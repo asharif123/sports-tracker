@@ -103,6 +103,15 @@ The following React hooks were utilized:
            
            2) Record when user logs out and ensure user cannot see any webpages without logging in.
 
+           3) Ensure that if user is logged in and refreshes, it will bring user back to the home page.
+           
+           4) If user is logged out and refreshes, the user will be redirected to the login page and is unable to see any webpage without logging in.
+
+- useNavigate - used to navigate across different webpages. Mainly used to implement the following feature:
+
+           1) If user is logged in or refreshes while logged in, useNavigate will automatically redirect to the homepage and if user logs out, user will be redirected to the login webpage.
+
+
 
 ## Credits
 Developers:
