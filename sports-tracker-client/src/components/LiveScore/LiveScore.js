@@ -90,7 +90,7 @@ function LiveScore() {
         setScores(result.data.data);
       }
       fetchAPI();
-    }, 600000);
+    }, 60000);
     return () => clearTimeout(timeer);
   });
   return (
