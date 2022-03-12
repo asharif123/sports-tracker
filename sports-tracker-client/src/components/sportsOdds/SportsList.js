@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { Col, ButtonGroup, Dropdown, DropdownButton } from "react-bootstrap";
+import { Col, ButtonGroup, Dropdown, DropdownButton, Button, Offcanvas } from "react-bootstrap";
 import axios from "axios";
 import SportsScores from "./SportsScores";
-import MediaGrid from "../MediaGrid";
+// import MediaGrid from "../MediaGrid";
 import Events from "../Events";
 import Racecards from "../HorseRacing/Racecards";
 
-function SportsList({ isLoading, items }) {
+function SportsList({ items }) {
   const [sportName, setSportName] = useState("basketball_nba");
+  const [isLoading, setIsLoading] = useState(true);
   const [gameScores, setGameScores] = useState([]);
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   function handleClick(event) {
     console.log("sport selected key:", event.target.id);
@@ -26,14 +32,20 @@ function SportsList({ isLoading, items }) {
       });
       console.log(result.data);
       setGameScores(result.data);
+      setIsLoading(false);
     };
     fetchScores();
-  }, [sportName]);
+  }, []);
 
-  return (
+  return isLoading ? (
+    <h1>Loading</h1>
+  ) : (
     <>
-      <Col lg={4} md={6} sm={12}>
+      <Col lg={3} md={4} sm={12}>
         <ButtonGroup>
+          <Button variant="secondary" onClick={handleShow}>
+            Game Cards
+          </Button>
           <DropdownButton
             as={ButtonGroup}
             title="Select Sport"
@@ -64,10 +76,20 @@ function SportsList({ isLoading, items }) {
 
         <SportsScores gameScores={gameScores} />
       </Col>
-      <Col lg={8} md={6} sm={12}>
-        {/* <Events /> */}
+      <Col lg={8} md={8} sm={12}>
         {<Racecards />}
       </Col>
+      {/* <Events /> */}
+      {/* <Col lg={3} md={6} sm={12}> </Col> */}
+
+      <Offcanvas show={show} onHide={handleClose}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Games Today</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          <Events />
+        </Offcanvas.Body>
+      </Offcanvas>
     </>
   );
 

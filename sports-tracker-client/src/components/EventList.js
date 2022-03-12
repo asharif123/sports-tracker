@@ -8,7 +8,7 @@ function EventList({ isLoading, items }) {
     <Container>
       <Row>
         {items.map((item) => (
-          <Col xl={3} lg={4} md={6} sm={12} xs={12} key={item.id} className="p-2">
+          <Col xl={6} lg={8} md={8} sm={12} xs={12} key={item.id} className="p-2">
             <Card className="gameCard text-center">
               <div className="home-away-teams">
                 <Card.Img

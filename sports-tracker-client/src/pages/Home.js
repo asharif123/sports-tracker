@@ -11,7 +11,13 @@ function Home() {
 
   return (
     <div>
-      {!state.loggedIn ? <Login /> : <><NewsCarousel /> <Racecards /></>}
+      {!state.loggedIn ? (
+        <Login />
+      ) : (
+        <>
+          <NewsCarousel /> <Sports />{" "}
+        </>
+      )}
       {/* <Sports />
       <Racecards /> */}
       {/* <>{!state.loggedIn ? <Login /> : <Racecards />}</> */}
