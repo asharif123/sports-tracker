@@ -16,7 +16,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "concurrently \"cd sports-tracker-client && npm start\" \"npm start\"",
-    "heroku-build": "cd sports-tracker-client && npm run build"
+    "install": "cd sports-tracker-client && npm i",
+    "build": "cd sports-tracker-client && npm run build"
   },
   "devDependencies": {
     "concurrently": "^7.0.0"
