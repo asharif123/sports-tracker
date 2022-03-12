@@ -97,7 +97,11 @@ The following React hooks were utilized:
 
            2) Horse Racing Rapid API
 
-- useContext
+- useContext - used to gain access to global data and rerender webpages when the global data is changed. The following example was used in this project for useContext:
+
+           1) Record when user logs in
+           
+           2) Record when user logs out and ensure user cannot see any webpages without logging in.
 
 
 ## Credits
