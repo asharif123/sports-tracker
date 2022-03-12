@@ -19,7 +19,7 @@ function NewsCarousel() {
             category: "sports",
          },
          headers: {
-            "X-Api-Key": process.env.REACT_APP_X_API_KEY || "29a6fdefaa474865ad7b23fb0e63c74e",
+            "X-Api-Key": process.env.REACT_APP_X_API_KEY || "d4ac7094famshefb4659379c8985p186611jsn51e5f1601804",
           },
         });
         console.log(result.data.articles);
