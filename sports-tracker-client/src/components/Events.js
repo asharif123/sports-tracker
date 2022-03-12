@@ -39,23 +39,23 @@ function Event() {
 
   return (
     <>
-      <div className="navbarButton">
-        <Button className="navbarButton-link" variant="secondary" onClick={() => setSportType("1")}>
-          Soccer/Football
+      <div>
+        <Button variant="secondary" onClick={() => setSportType("1")}>
+          Soccer
         </Button>
-        <Button className="navbarButton-link" variant="secondary" onClick={() => setSportType("2")}>
+        <Button variant="secondary" onClick={() => setSportType("2")}>
           Tennis
         </Button>
-        <Button className="navbarButton-link" variant="secondary" onClick={() => setSportType("3")}>
+        <Button variant="secondary" onClick={() => setSportType("3")}>
           Basketball
         </Button>
-        <Button className="navbarButton-link" variant="secondary" onClick={() => setSportType("4")}>
+        <Button variant="secondary" onClick={() => setSportType("4")}>
           Ice Hockey
         </Button>
-        <Button className="navbarButton-link" variant="secondary" onClick={() => setSportType("5")}>
+        <Button variant="secondary" onClick={() => setSportType("5")}>
           Volleyball
         </Button>
-        <Button className="navbarButton-link" variant="secondary" onClick={() => setSportType("6")}>
+        <Button variant="secondary" onClick={() => setSportType("6")}>
           Handball
         </Button>
       </div>
