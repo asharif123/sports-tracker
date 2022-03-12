@@ -11,16 +11,9 @@ function Home() {
 
   return (
     <div>
-      {!state.loggedIn ? (
-        <Login />
-      ) : (
-        <>
-          <NewsCarousel /> <Sports />{" "}
-        </>
-      )}
-      {/* <Sports />
-      <Racecards /> */}
-      {/* <>{!state.loggedIn ? <Login /> : <Racecards />}</> */}
+
+
+      {!state.loggedIn ? <Login /> : <><Sports /> <Racecards /></>}
     </div>
   );
 }

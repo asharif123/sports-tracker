@@ -12,11 +12,11 @@ const GetEvents = ({ scores }) => {
   }
 
   return scores ? (
-    <p className="tickerBar" style={{ whiteSpace: "nowrap" }}>
+    <p style={{ whiteSpace: "nowrap" }}>
       <ListGroup horizontal>
         {scores.map((score) => (
           <>
-            <ListGroup.Item className="border-0 tickerItems">
+            <ListGroup.Item className="tickerItems">
               <h1>|</h1>
             </ListGroup.Item>
             <ListGroup.Item className="border-0 tickerItems">

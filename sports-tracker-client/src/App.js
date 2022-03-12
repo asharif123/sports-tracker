@@ -36,7 +36,7 @@ function App() {
       
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        {!state.loggedIn ? <Login /> : <><LiveScore/></>}
+        {!state.loggedIn ? false : <><LiveScore/></>}
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>
