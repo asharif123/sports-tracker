@@ -109,7 +109,9 @@ The following React hooks were utilized:
 
 - useNavigate - used to navigate across different webpages. Mainly used to implement the following feature:
 
-           1) If user is logged in or refreshes while logged in, useNavigate will automatically redirect to the homepage and if user logs out, user will be redirected to the login webpage.
+           1) If user is logged in or refreshes while logged in, useNavigate will automatically redirect to the homepage.
+           
+           2) If user logs out, user will be redirected to the login webpage.
 
 
 
