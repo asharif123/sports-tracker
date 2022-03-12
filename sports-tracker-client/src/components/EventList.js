@@ -1,9 +1,11 @@
 import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col, Card, Spinner } from "react-bootstrap";
 import "../components/styles/events.css";
 function EventList({ isLoading, items }) {
   return isLoading ? (
-    <h1>Loading</h1>
+    <Container className="d-flex justify-content-center">
+      <Spinner animation="border" />
+    </Container>
   ) : (
     <Container>
       <Row>

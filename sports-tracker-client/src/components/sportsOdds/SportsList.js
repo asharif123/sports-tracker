@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Col, ButtonGroup, Dropdown, DropdownButton, Button, Offcanvas } from "react-bootstrap";
+import {
+  Col,
+  ButtonGroup,
+  Dropdown,
+  DropdownButton,
+  Button,
+  Offcanvas,
+  Spinner,
+} from "react-bootstrap";
 import axios from "axios";
 import SportsScores from "./SportsScores";
 // import MediaGrid from "../MediaGrid";
@@ -35,10 +43,10 @@ function SportsList({ items }) {
       setIsLoading(false);
     };
     fetchScores();
-  }, []);
+  }, [sportName]);
 
   return isLoading ? (
-    <h1>Loading</h1>
+    <Spinner animation="border" />
   ) : (
     <>
       <Col lg={3} md={4} sm={12}>
@@ -84,7 +92,7 @@ function SportsList({ items }) {
 
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Games Today</Offcanvas.Title>
+          <Offcanvas.Title>Games</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Events />

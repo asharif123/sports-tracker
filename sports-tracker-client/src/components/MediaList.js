@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Card, Button, Spinner } from "react-bootstrap";
 import ReactPlayer from "react-player";
 
 function MediaList({ isLoading, items }) {
@@ -14,7 +14,7 @@ function MediaList({ isLoading, items }) {
   };
 
   return isLoading ? (
-    <h1>Loading</h1>
+    <Spinner animation="border" />
   ) : playButtonToggle ? (
     // PLAY HIGHLIGHT
     <Container className="d-flex justify-content-center">
