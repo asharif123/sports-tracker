@@ -81,8 +81,8 @@ Sass CSS
 ## React Hooks
 The following React hooks were utilized:
 
-- useState - use to record state changes of current value and updated value. This was used for the following features:
-- 
+- useState - used to record state changes of current value and updated value. This was used for the following features:
+
            1) To show loading icon before content loads on Home, Sports News, and Game Highlights webpages. webpages.
           
            2) To record when user is logged in or logged out.
@@ -91,7 +91,11 @@ The following React hooks were utilized:
            
            4) To load the sidebar containing links to Home, Logout, Sports News, and Game Highlights
            
-- useEffect
+- useEffect - used to eliminate side effect and print out data when webpage renders, mainly used for API calls. The following APIs utilized the useEffect hook:
+
+           1) Sports Score Rapid API
+
+           2) Horse Racing Rapid API
 
 - useContext
 
