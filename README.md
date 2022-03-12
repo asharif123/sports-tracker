@@ -52,21 +52,21 @@ Create database. This step can be done in your terminal or using a GUI.
 ## Usage
 
 This is the login. If The user exist they will have the option to login in or if they are a new user they will have the option to sign up
-![This is an image](sports-tracker/sports-tracker-client/public/demo/loginpage.png)
+![This is an image](/sports-tracker-client/public/demo/loginpage.png)
 
 Once the user is logged they will be presented with the homepage 
-![This is an image](sports-tracker/sports-tracker-client/public/demo/Home-one.png)
+![This is an image](/sports-tracker-client/public/demo/Home-one.png)
 The homepage has a sidebar presenting users with game scores
-![This is an image](sports-tracker/sports-tracker-client/public/demo/Home-two.png)
+![This is an image](/sports-tracker-client/public/demo/Home-two.png)
 
 The user can use the menu to navigate to highlights and news 
-![This is an image](sports-tracker/sports-tracker-client/public/demo/navmenu.png)
+![This is an image](/sports-tracker-client/public/demo/navmenu.png)
 
 When the user selects news they will be navigated the news page where they will have the option to select the sports article that appeals the user. 
-![This is an image](sports-tracker/sports-tracker-client/public/demo/newspage.png)
+![This is an image](/sports-tracker-client/public/demo/newspage.png)
 
 When the user selects highlights they will be navigated to the highlights page and presented with option to view the highlights video.
-![This is an image](sports-tracker/sports-tracker-client/public/demo/highlightspage.png)
+![This is an image](/sports-tracker-client/public/demo/highlightspage.png)
 
 Technology Utilized
 Node.js
