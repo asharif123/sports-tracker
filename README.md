@@ -81,11 +81,15 @@ Sass CSS
 ## React Hooks
 The following React hooks were utilized:
 
-1) useState
+- useState - use to record state changes of current value and updated value. This was used for the following features:
+           1) To show loading icon before content loads on Home, Sports News, and Game Highlights webpages. webpages.
+           2) To record when user is logged in or logged out
+           3) To make various API calls to load specific content on the Home, Sports News, and Game Highlights webpages.
+           4) To load the sidebar containing links to Home, Logout, Sports News, and Game Highlights
+           
+- useEffect
 
-2) useEffect
-
-3) useContext
+- useContext
 
 
 ## Credits
