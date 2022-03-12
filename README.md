@@ -78,7 +78,14 @@ SQL
 React Bootstrap
 Sass CSS
 
-## React Hooks Used
+## React Hooks
+The following React hooks were utilized:
+
+1) useState
+
+2) useEffect
+
+3) useContext
 
 
 ## Credits
