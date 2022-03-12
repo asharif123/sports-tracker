@@ -73,26 +73,26 @@ function LiveScore() {
   }, []);
 
   // Timed call to refresh scores
-  useEffect(() => {
-    const timeer = setTimeout(() => {
-      //debounced effect
-      async function fetchAPI() {
-        const result = await axios.get(`https://sportscore1.p.rapidapi.com/events/live`, {
-          params: {
-            page: 1,
-          },
-          headers: {
-            "x-rapidapi-host": "sportscore1.p.rapidapi.com",
-            "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY,
-          },
-        });
-        console.log(result.data.data);
-        setScores(result.data.data);
-      }
-      fetchAPI();
-    }, 60000);
-    return () => clearTimeout(timeer);
-  });
+  // useEffect(() => {
+  //   const timeer = setTimeout(() => {
+  //     //debounced effect
+  //     async function fetchAPI() {
+  //       const result = await axios.get(`https://sportscore1.p.rapidapi.com/events/live`, {
+  //         params: {
+  //           page: 1,
+  //         },
+  //         headers: {
+  //           "x-rapidapi-host": "sportscore1.p.rapidapi.com",
+  //           "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY,
+  //         },
+  //       });
+  //       console.log(result.data.data);
+  //       setScores(result.data.data);
+  //     }
+  //     fetchAPI();
+  //   }, 60000);
+  //   return () => clearTimeout(timeer);
+  // });
   return (
     <div className="ticker">
       <Ticker offset="run-in" speed={5}>
