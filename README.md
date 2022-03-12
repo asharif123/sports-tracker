@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# Sports Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Description
+Sports tracker the application where sports fans can find, news, highlights, game scores, and horseracing information . Users have access to different sports, such as Soccer, Tennis Basketball, Ice Hockey, Volleyball, and Handball. An easy user friendly dashboard for fans to navigate as they search the latest on their favorite sports. 
 
-In the project directory, you can run:
 
-### `npm start`
+Our motivation was to create a react application that would appeal to a sports fans. Utilizing react hooks and different components to render different sports data for our users . Our users can navigate to news articles or sports video highlights. They are also presented with a neat sports page layout. Our user authentication grants user access to see sports articles and highlight videos. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- What problem does it solve?
 
-### `npm test`
+We are using a few different APIs to fetch the data being displayed on the application. By building a full stack app and using react components the application back end functionality rendered the data from the api calls to the front end for our users to see and interact with. 
+ 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+- What did you learn?
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+We learned how to use react for the front end and use node.js, express for the backend to create a fully functional single page application. Using SQL for our database we were able to create user authentication for the users to access the application information.  By using react router the user is presented with different pages,however it application not refreshed, creating a better user experience. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Table of Contents (Optional)
+If your README is long, add a table of contents to make it easy for users to find what they need.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+## Installation
+The project was uploaded to GitHub at the following repository:  https://github.com/asharif123/rental-finder
 
-### `npm run eject`
+You can access the deployed application with the Heroku link: 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To install the project follow these steps:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Clone the application from GitHub with:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+git clone [clone link from GitHub]
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+From the root folder, install the dependencies with:
 
-## Learn More
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Run the app with:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm run dev
 
-### Code Splitting
+After the installation is complete. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Create database. This step can be done in your terminal or using a GUI. 
 
-### Analyzing the Bundle Size
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This is the login. If The user exist they will have the option to login in or if they are a new user they will have the option to sign up
+![This is an image](/sports-tracker/sports-tracker-client/public/demo/loginpage.png)
 
-### Making a Progressive Web App
+Once the user is logged they will be presented with the homepage 
+![This is an image](/sports-tracker/sports-tracker-client/public/demo/Home-one.png)
+The homepage has a sidebar presenting users with game scores
+![This is an image](/sports-tracker/sports-tracker-client/public/demo/Home-two.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The user can use the menu to navigate to highlights and news 
+![This is an image](/sports-tracker/sports-tracker-client/public/demo/navmenu.png)
 
-### Advanced Configuration
+When the user selects news they will be navigated the news page where they will have the option to select the sports article that appeals the user. 
+![This is an image](/sports-tracker/sports-tracker-client/public/demo/newspage.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+When the user selects highlights they will be navigated to the highlights page and presented with option to view the highlights video.
+![This is an image](/sports-tracker/sports-tracker-client/public/demo/highlightspage.png)
 
-### Deployment
+Technology Utilized
+Node.js
+Express
+React
+React-Router
+Flickity
+SQL
+React Bootstrap
+Sass CSS
+ ## Credits
+Developers:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Delmy Elias https://github.com/Dlelias
+ 
+Mason Newell https://github.com/MasonNewell
 
-### `npm run build` fails to minify
+Awad Sharif https://github.com/asharif123
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Dustin Smith https://github.com/Interceptr83
+
+Copyright (c) 2022
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+---
+🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
