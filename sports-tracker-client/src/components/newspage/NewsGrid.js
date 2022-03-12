@@ -14,18 +14,23 @@ function NewsGrid() {
 
   useEffect(() => {
     const fetchAPI = async () => {
-      const result = await axios.get(`https://newsapi.org/v2/top-headlines?country=us`, {
-        params: {
-          page: 1,
-          pageSize: 100,
-          from: yesterday,
-          to: current,
-          category: "sports",
-        },
-        headers: {
-          "X-Api-Key": process.env.REACT_APP_X_API_KEY,
-        },
-      });
+      const result = await axios.get(
+        `https://newsapi.org/v2/top-headlines?country=us`,
+        {
+          params: {
+            page: 1,
+            pageSize: 100,
+            from: yesterday,
+            to: current,
+            category: "sports",
+          },
+          headers: {
+            "X-Api-Key":
+              process.env.REACT_APP_X_API_KEY ||
+              "29a6fdefaa474865ad7b23fb0e63c74e",
+          },
+        }
+      );
       console.log(result.data.articles);
       setArticles(result.data.articles);
       setIsLoading(false);
