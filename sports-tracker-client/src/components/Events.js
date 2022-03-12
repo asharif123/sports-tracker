@@ -25,7 +25,7 @@ function Event() {
           params: { page: "1" },
           headers: {
             "x-rapidapi-host": "sportscore1.p.rapidapi.com",
-            "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY || '68636facbmshd747eea5bda64f8p10918ejsnabc7ff941123',
+            "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY || 'cc999a6a26mshedf311541e3868dp109ff4jsn3ba885d525d6',
           },
         }
       );
