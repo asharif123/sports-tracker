@@ -25,6 +25,7 @@ If your README is long, add a table of contents to make it easy for users to fin
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
+- 
 ## Installation
 The project was uploaded to GitHub at the following repository:  https://github.com/asharif123/rental-finder
 
@@ -76,7 +77,11 @@ Flickity
 SQL
 React Bootstrap
 Sass CSS
- ## Credits
+
+## React Hooks Used
+
+
+## Credits
 Developers:
 
 Delmy Elias https://github.com/Dlelias
