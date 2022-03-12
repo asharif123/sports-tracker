@@ -68,7 +68,7 @@ function SportsList({ items }) {
 
         <SportsScores gameScores={gameScores} />
       </Col>
-      <Col lg={6} md={8} sm={12}>
+      <Col lg={8} md={8} sm={12}>
         {<Racecards />}
       </Col>
       <Events />
