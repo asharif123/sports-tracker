@@ -1,22 +1,18 @@
 import Form from "react-bootstrap/Form";
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "../pages/styles/Login.css";
-// import { checkLoginPassword, validateLoginEmail } from '../utils/helpers';
 import LoginCarousel from "../components/loginCarousel/LoginCarousel";
 
-import {
-  checkLoginPassword,
-  validateLoginEmail,
-  checkUserName,
-} from "../utils/helpers";
+import { checkLoginPassword, validateLoginEmail, checkUserName } from "../utils/helpers";
 import { useContext } from "react";
 import { CountContext } from "../ContextProvider";
 
 const apiEndpoint =
-  process.env.NODE_ENV === "production" ? "" : "http://localhost:3001";
+  process.env.NODE_ENV === "production"
+    ? "https://someappname.herokuapp.com"
+    : "http://localhost:3001";
 
 function Login() {
   const { state, dispatch } = useContext(CountContext);
@@ -56,7 +52,6 @@ function Login() {
   };
 
   const handleFormSignup = async (e) => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
 
     if (userNameSignup.length < 6) {
@@ -182,11 +177,7 @@ function Login() {
                 placeholder="Create password"
               />
             </Form.Group>
-            <Button
-              variant="secondary"
-              type="submit"
-              onClick={handleFormSignup}
-            >
+            <Button variant="secondary" type="submit" onClick={handleFormSignup}>
               Signup
             </Button>
           </Form>

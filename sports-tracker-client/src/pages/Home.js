@@ -4,7 +4,6 @@ import Sports from "../components/sportsOdds/Sports";
 import Login from "../pages/Login";
 import { useContext } from "react";
 import { CountContext } from "../ContextProvider";
-import Racecards from "../components/HorseRacing/Racecards";
 
 function Home() {
   const { state, dispatch } = useContext(CountContext);
@@ -18,9 +17,6 @@ function Home() {
           <NewsCarousel /> <Sports />{" "}
         </>
       )}
-      {/* <Sports />
-      <Racecards /> */}
-      {/* <>{!state.loggedIn ? <Login /> : <Racecards />}</> */}
     </div>
   );
 }
