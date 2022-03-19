@@ -19,11 +19,13 @@ function NewsList({ isLoading, articles }) {
     <Container>
       <Row>
         {articles.map((item) => (
-          <Col lg={3} md={6} sm={10} xs={12}>
+          <Col xl={3} lg={4} md={6} sm={12} xs={12}>
             <Card className="p-2 text-center">
               <Card.Img src={item.urlToImage} onError={addDefaultSrc} style={{ height: "240px" }} />
               <Card.Body>
-                <Card.Title style={{ height: "150px" }}>{item.title}</Card.Title>
+                <Card.Title style={{ minHeight: "150px", marginBottom: "5px" }}>
+                  {item.title}
+                </Card.Title>
                 <Button
                   className="w-100"
                   variant="secondary"

@@ -12,7 +12,7 @@
 
 .carCard {
   max-width: 375px;
-  min-height: 390px;
+  min-height: 350px;
   max-height: 390px;
   border-radius: 10px;
   display: grid;

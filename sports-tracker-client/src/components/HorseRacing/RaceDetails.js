@@ -36,7 +36,7 @@ function RaceDetails({ racingDetails, setIsButtonPressed }) {
           <Button variant="secondary" onClick={() => setIsButtonPressed(false)}>
             Return To Listings
           </Button>
-          {/* EVENT STUFF */}
+          {/* EVENT Info */}
           <h1>{raceItems.course}</h1>
           <h5>
             {raceItems.title}(CLASS{raceItems.class})
@@ -50,7 +50,7 @@ function RaceDetails({ racingDetails, setIsButtonPressed }) {
             </ListGroup>
           </Col>
 
-          {/* HORSE STUFF */}
+          {/* Horse Info */}
           <Container>
             <Table responsive>
               <thead>

@@ -10,7 +10,6 @@ import {
 } from "react-bootstrap";
 import axios from "axios";
 import SportsScores from "./SportsScores";
-// import MediaGrid from "../MediaGrid";
 import Events from "../Events";
 import Racecards from "../HorseRacing/Racecards";
 
@@ -87,8 +86,6 @@ function SportsList({ items }) {
       <Col lg={8} md={8} sm={12}>
         {<Racecards />}
       </Col>
-      {/* <Events /> */}
-      {/* <Col lg={3} md={6} sm={12}> </Col> */}
 
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
@@ -100,26 +97,6 @@ function SportsList({ items }) {
       </Offcanvas>
     </>
   );
-
-  // For full map of options
-  // return isLoading ? (
-  //   <h1>Loading</h1>
-  // ) : (
-  //   <>
-  //     <Col lg={4} md={4} sm={4}>
-  //       <ListGroup>
-  //         {items.map((item) => (
-  //           <ListGroupItem key={item.key} id={item.key} action onClick={handleClick}>
-  //             {item.title}
-  //           </ListGroupItem>
-  //         ))}
-  //       </ListGroup>
-  //     </Col>
-  //     <Col lg={8} md={8} sm={4}>
-  //       <SportsScores gameScores={gameScores} />
-  //     </Col>
-  //   </>
-  // );
 }
 
 export default SportsList;
