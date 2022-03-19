@@ -9,7 +9,7 @@ function Racecards() {
   //   RaceCards
   useEffect(() => {
     let date = moment(new Date()).format("YYYY-MM-DD");
-    console.log(date)
+    console.log(date);
 
     const fetchCard = async () => {
       const result = await axios.get(`https://horse-racing.p.rapidapi.com/racecards`, {
@@ -19,7 +19,6 @@ function Racecards() {
           "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY,
         },
       });
-      console.log(result.config.url);
       console.log(result.data);
       setItems(result.data);
       setIsLoading(false);
